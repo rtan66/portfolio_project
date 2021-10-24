@@ -35,11 +35,29 @@ These URLs still won’t work properly because
 we don’t have any HTML templates.
 
 
+Once the blog-specific URLs are in place, 
+you need to add them to the projects URL 
+configuration using include():
+
+
+
+With this set up, all the blog URLs will be prefixed 
+with blog/, and you’ll have the following URL paths:
+
+localhost:8000/blog: Blog index
+localhost:8000/blog/1: Blog detail view of blog with pk=1
+localhost:8000/blog/python: Blog index view of all posts with category python
+
+These URLs won’t work just yet as you still NEED to create the templates.
+
 """
+
+
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("projects/", include("projects.urls")),
+    path("blog/", include("blog.urls")),
 ]
