@@ -77,3 +77,5 @@ class CommentForm(forms.Form):
             "placeholder": "Leave a comment!"
         })
     )
+
+ 
